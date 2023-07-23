@@ -1,40 +1,51 @@
-/*Input:  iRow = 3  iCol = 4
-Output: * * *
-        * * *
-        * * *
-        * * *
-*/
-
 #include<stdio.h>
+#include<stdlib.h>
 
-void Pattern(int iRow, int iCol)
+int CountEven(int Arr[],int iLength)
 {
-    int i = 0;
-    int j = 0;
+    int iCnt = 0;
+    int iCounter = 0;
+    
+    for(iCnt = 0; iCnt < iLength; iCnt++)
+    {
+      if((Arr[iCnt]  % 2) == 0)
 
-  for(i = 1; i<= iRow; i++)
- {
-  for(j = 1; j <= iCol; j++)
-  {
-    printf("*\t");
-  }
-  printf("\n");
- }
+      {
+       iCounter++;
+      } 
+       
+    }
 
+   return iCounter;
 }
 
 int main()
 {
-    int iValue1 = 0;
-    int iValue2 = 0;
-    printf("Enter the number of rows: \n");
-    scanf("%d",&iValue1);
+  int iSize = 0;
+  int *p = NULL;
+  int iCnt = 0;
+  int iRet = 0;
+  
 
-    printf("Enter the number of column: \n");
-    scanf("%d",&iValue2);
+  printf("enter the elements");
+  scanf("%d",&iSize);
 
+  p = (int *)malloc(iSize * sizeof(int));
+  if(p == NULL)
+  {
+    printf("Unable to allocate the memory");
+    return -1;
+  }
 
-    Pattern(iValue1,iValue2);
-
-    return 0;
+  printf("Enter elements: \n");
+  for(iCnt = 0; iCnt < iSize; iCnt++)
+  {
+    printf("Enter elements :%d",iCnt+1);
+    scanf("%d",&p[iCnt]);
+  }
+  iRet = CountEven(p, iSize);
+  printf("Frequency of even number is %d",iRet);
+  
+  free(p);
+  return 0;
 }

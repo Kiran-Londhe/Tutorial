@@ -1,43 +1,57 @@
-/*Input:  iRow = 4  iCol = 4
-Output: 1 1 1 1
-        2 2 2 2 
-        3 3 3 3
-        4 4 4 4
-         
-*/
-
 #include<stdio.h>
+#include<stdlib.h>
 
-void Pattern(int iRow, int iCol)
+int Frequency(int Arr[],int iLength,int iNo)
 {
-    int i = 0;
-    int j = 0;
-    int iCnt = 1;
+    int iCnt = 0;
+    int iCount = 0;
+    
+    for(iCnt = 0; iCnt < iLength; iCnt++)
+    {
+      if(Arr[iCnt] == iNo)
 
-  for(i = 1; i <=iRow; i++)
- {
-  for(j = 1 ; j <= iCol; j++)
-  
-   {
-    printf("%d\t",i);
-   }
-   printf("\n");
- }
- 
+      {
+       iCount++;
+       
+      } 
+      
+       
+    }
+
+   return iCount;
 }
 
 int main()
 {
-    int iValue1 = 0;
-    int iValue2 = 0;
-    printf("Enter the number of rows: \n");
-    scanf("%d",&iValue1);
+  int iSize = 0;
+  int *p = NULL;
+  int iCnt = 0;
+  int iRet = 0;
+  int iValue = 0;
+  
 
-    printf("Enter the number of column: \n");
-    scanf("%d",&iValue2);
+  printf("enter the elements");
+  scanf("%d",&iSize);
 
+  p = (int *)malloc(iSize * sizeof(int));
+  if(p == NULL)
+  {
+    printf("Unable to allocate the memory");
+    return -1;
+  }
 
-    Pattern(iValue1,iValue2);
+  printf("Enter elements: \n");
+  for(iCnt = 0; iCnt < iSize; iCnt++)
+  {
+    printf("Enter elements :%d",iCnt+1);
+    scanf("%d",&p[iCnt]);
+  }
 
-    return 0;
+  printf("Enter the number to find its frequency: ");
+  scanf("%d", &iValue);
+  iRet = Frequency(p, iSize,iValue);
+  printf("Frequency of %d in the given array is: %d", iValue, iRet);
+  
+  free(p);
+  return 0;
 }

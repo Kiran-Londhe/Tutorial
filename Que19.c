@@ -1,48 +1,48 @@
-/*Input:  iRow = 5   iCol = 5
-Output: 1  2  3  4  5
-       -1 -2 -3 -4 -5
-        1  2  3  4  5
-       -1 -2 -3 -4 -5
-        1  2  3  4  5
-        */
-
 #include <stdio.h>
+#include <stdlib.h>
 
-void Pattern(int iRow, int iCol)
+void Digits(int Arr[], int iLength)
 {
-    int i, j;
-
-    for (i = 1; i <= iRow; i++)
+    int iCnt = 0;
+    
+    
+    for(iCnt = 0; iCnt < iLength; iCnt++)
     {
-        if (i % 2 == 1) 
+        if(Arr[iCnt] >= 100 && Arr[iCnt] <= 999)
+        
         {
-            for (j = 1; j <= iCol; j++)
-            {
-                printf("%d\t", j);
-            }
+            printf("%d ", Arr[iCnt]);
         }
-        else 
-        {
-            for (j = 1; j <= iCol; j++)
-            {
-                printf("%d\t", -j);
-            }
-        }
-        printf("\n");
     }
+    
+    printf(" is three digit numbers : \n");
 }
 
 int main()
 {
-    int iValue1 = 0;
-    int iValue2 = 0;
-    printf("Enter the number of rows: \n");
-    scanf("%d", &iValue1);
+    int iSize = 0;
+    int *ptr = NULL;
+    int iCnt = 0;
 
-    printf("Enter the number of columns: \n");
-    scanf("%d", &iValue2);
+    printf("Enter the number of elements: ");
+    scanf("%d", &iSize);
 
-    Pattern(iValue1, iValue2);
+    ptr = (int *)malloc(iSize * sizeof(int));
+    if(ptr == NULL)
+    {
+        printf("Unable to allocate memory");
+        return -1;
+    }
+
+    printf("Enter the elements: \n");
+    for(iCnt = 0; iCnt < iSize; iCnt++)
+    {
+        scanf("%d", &ptr[iCnt]);
+    }
+
+    Digits(ptr, iSize);
+
+    free(ptr);
 
     return 0;
 }

@@ -1,46 +1,61 @@
-/*Input:  iRow = 3  iCol = 5
-Output: A A A A A 
-        B B B B B 
-        C C C C C
-        */
-
 #include<stdio.h>
+#include<stdlib.h>
 
-void Pattern(int iRow, int iCol)
+#define ERR_NOTFOUND -1
+
+int LastOcc(int Arr[], int iLength, int iNo)
 {
-    int i = 0;
-    int j = 0;
-    char ch ='A';
-    
-  for(i = 1, ch ='A';  i <=iRow; i++,ch++)
- {
-  for(j = 1; j <= iCol; j++)
-  {
-    
-   {
-    printf("%c\t",ch);
-   
-    
-   }
-   
-  }
-   printf("\n");
- }
- 
+    int iCnt = 0;
+    int iPos = ERR_NOTFOUND;
+
+    for(iCnt = 0; iCnt < iLength ;iCnt++)
+    {
+        if(Arr[iCnt] == iNo)
+        {
+            iPos = iCnt;
+        }
+    }
+    return iPos;
 }
 
 int main()
 {
-    int iValue1 = 0;
-    int iValue2 = 0;
-    printf("Enter the number of rows: \n");
-    scanf("%d",&iValue1);
+    int iSize = 0;
+    int *ptr = NULL;
+    int iCnt = 0, iValue = 0, iRet = 0;
 
-    printf("Enter the number of column: \n");
-    scanf("%d",&iValue2);
+    printf("Enter number of elements : \n");
+    scanf("%d",&iSize);    
 
+    ptr = (int *)malloc(iSize * sizeof(int));
 
-    Pattern(iValue1,iValue2);
+    printf("Enter the elements : \n");
+    for(iCnt = 0; iCnt < iSize; iCnt++)
+    {
+        scanf("%d",&ptr[iCnt]);
+    }
+
+    printf("Enter the element that you want to search : \n");
+    scanf("%d",&iValue);
+
+    printf("Elements of the arry are : \n");
+    for(iCnt = 0; iCnt < iSize; iCnt++)
+    {
+        printf("%d\n",ptr[iCnt]);
+    }
+
+    iRet = LastOcc(ptr,iSize, iValue);
+
+    if(iRet == ERR_NOTFOUND)
+    {
+        printf("There is no such element\n");
+    }
+    else
+    {
+        printf("%d occured at index %d\n",iValue,iRet);
+    }
+ 
+    free(ptr);
 
     return 0;
 }

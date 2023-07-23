@@ -1,45 +1,65 @@
-/*Input:  iRow = 4  iCol = 4
-Output: A B C D
-        A B C D
-        A B C D
-        A B C D 
-*/
-
 #include<stdio.h>
+#include<stdlib.h>
+#include<stdbool.h>
 
-void Pattern(int iRow, int iCol)
+bool Check(int Arr[],int iLength,int iNo)
 {
-    int i = 0;
-    int j = 0;
-    char ch ='A';
-
-  for(i = 1;  i <=iRow; i++)
- {
-  for(j = 1, ch = 'A'; j <= iCol; j++,ch++)
-  {
- 
-   {
-    printf("%c\t",ch);
+    int iCnt = 0;
+    int iCheck = 0;
     
-   }
-  }
-   printf("\n");
- }
- 
+    for(iCnt = 0; iCnt < iLength; iCnt++)
+    {
+      if(Arr[iCnt] == iNo)
+
+      {
+       return true;
+       
+      } 
+      
+       
+    }
+
+   return false;
 }
 
 int main()
 {
-    int iValue1 = 0;
-    int iValue2 = 0;
-    printf("Enter the number of rows: \n");
-    scanf("%d",&iValue1);
+  int iSize = 0;
+  int *p = NULL;
+  int iCnt = 0;
+  bool bRet = false;
+  int iValue = 0;
+  
 
-    printf("Enter the number of column: \n");
-    scanf("%d",&iValue2);
+  printf("enter the elements");
+  scanf("%d",&iSize);
 
+  p = (int *)malloc(iSize * sizeof(int));
+  if(p == NULL)
+  {
+    printf("Unable to allocate the memory");
+    return -1;
+  }
 
-    Pattern(iValue1,iValue2);
-
-    return 0;
+  printf("Enter elements: \n");
+  for(iCnt = 0; iCnt < iSize; iCnt++)
+  {
+    printf("Enter elements :%d",iCnt+1);
+    scanf("%d",&p[iCnt]);
+  }
+    printf("Enter the number to find its frequency: ");
+    scanf("%d", &iValue);
+    
+  bRet = Check(p, iSize,iValue);
+  if(bRet == true)
+  {
+    printf("Number is present");
+  }
+  else
+  {
+    printf("Number is absent");
+  }
+  
+  free(p);
+  return 0;
 }

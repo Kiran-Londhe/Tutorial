@@ -1,39 +1,31 @@
-/*Input:  iRow = 4   iCol = 4
-Output: 1 2 3 4
-        2 3 4 5
-        3 4 5 6
-        4 5 6 7
-        */
-
 #include <stdio.h>
 
-void Pattern(int iRow, int iCol)
+int CountWhite(char *str)
 {
-    int i = 0; 
-    int j = 0;
-    for (i = 1; i <= iRow; i++)
+    int iCount = 0;
+    
+    while(*str != '\0')
     {
-        int startValue = i;
-        for (j = 1; j <= iCol; j++)
+        if(*str == ' ')
         {
-            printf("%d\t", startValue);
-            startValue++;
+            iCount++;
         }
-        printf("\n");
+        str++;
     }
+
+    return iCount;
 }
 
 int main()
 {
-    int iValue1 = 0;
-    int iValue2 = 0;
-    printf("Enter the number of rows: \n");
-    scanf("%d", &iValue1);
+    char arr[20];
+    int iRet = 0;
 
-    printf("Enter the number of columns: \n");
-    scanf("%d", &iValue2);
+    printf("Enter string: \n");
+    scanf("%[^\n]s", arr);
 
-    Pattern(iValue1, iValue2);
+    iRet = CountWhite(arr);
+    printf("Number of white spaces are : %d\n",iRet);
 
     return 0;
 }

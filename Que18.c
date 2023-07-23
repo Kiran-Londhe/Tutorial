@@ -1,53 +1,55 @@
-/*Input:  iRow = 5   iCol = 5
-Output: a b c d e
-        1 2 3 4 5
-        a b c d e
-        1 2 3 4 5
+#include <stdio.h>
+#include <stdlib.h>
 
-        */
-
-#include<stdio.h>
-
-void Pattern(int iRow, int iCol)
+int Difference(int Arr[], int iLength)
 {
-    int i = 0;
-    int j = 0;
-    char ch = 'a';
-    
-  for(i = 1; i <= iRow; i++)
- {
-  for(j = 1; j <= iCol; j++)
-  {
-    if((i % 2) == 0) 
-   {
-    printf("%c\t",ch);
-    ch++;
-    
-   }
-   else
-   {
-    printf("%d\t",j);
-   
-   }
-  }
-   printf("\n");
-   
- }
- 
+    int iCnt = 0;
+    int iMin = Arr[0];
+    int iMax = Arr[0];
+
+    for(iCnt = 1; iCnt < iLength; iCnt++)
+    {
+        if(Arr[iCnt] < iMin)
+        {
+            iMin = Arr[iCnt];
+        }
+        if(Arr[iCnt] > iMax)
+        {
+            iMax = Arr[iCnt];
+        }
+    }
+
+    return iMax - iMin;
 }
 
 int main()
 {
-    int iValue1 = 0;
-    int iValue2 = 0;
-    printf("Enter the number of rows: \n");
-    scanf("%d",&iValue1);
+    int iSize = 0;
+    int *ptr = NULL;
+    int iCnt = 0;
+    int iRet = 0;
 
-    printf("Enter the number of column: \n");
-    scanf("%d",&iValue2);
+    printf("Enter the number of elements: ");
+    scanf("%d", &iSize);
 
+    ptr = (int *)malloc(iSize * sizeof(int));
+    if(ptr == NULL)
+    {
+        printf("Unable to allocate memory");
+        return -1;
+    }
 
-    Pattern(iValue1,iValue2);
+    printf("Enter the elements: \n");
+    for(iCnt = 0; iCnt < iSize; iCnt++)
+    {
+        scanf("%d", &ptr[iCnt]);
+    }
+
+    iRet = Difference(ptr, iSize);
+
+    printf("Difference between the largest and smallest numbers: %d\n", iRet);
+
+    free(ptr);
 
     return 0;
 }

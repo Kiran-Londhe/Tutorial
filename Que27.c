@@ -1,14 +1,14 @@
-/*Input:  iRow = 4   iCol = 4
-Output: *   *   *   *
-        *   *   *
-        *   *
-        *
-        
+/*input:  iRow = 4  iCol = 4
 
-        
-        */
+output:
+          *    *   *    #
+          *    *   #    @
+          *    #   @    @
+          #    @   @    @
 
-#include <stdio.h>
+*/
+
+#include<stdio.h>
 
 void Pattern(int iRow, int iCol)
 {
@@ -18,14 +18,18 @@ void Pattern(int iRow, int iCol)
     {
      for (j = 1; j <= iCol; j++)
      {
-        if(i >= j)
+        if(i == j)
         {
-            printf("*\t",i);
+            printf("#\t",j);
           
         }
-        else 
+        else if(i < j)
         {
-          printf("\t");  
+          printf("@\t");  
+        }
+        else if(i > j)
+        {
+          printf("*\t");  
         }
         
      }
@@ -35,15 +39,14 @@ void Pattern(int iRow, int iCol)
 
 int main()
 {
-    int iValue1 = 0;
-    int iValue2 = 0;
-    printf("Enter the number of rows: \n");
+    int iValue1 = 0, iValue2 = 0;
+
+    printf("Enter number of rows:\n");
     scanf("%d", &iValue1);
 
-    printf("Enter the number of columns: \n");
+    printf("Enter number of column: \n");
     scanf("%d", &iValue2);
 
     Pattern(iValue1, iValue2);
-
     return 0;
 }

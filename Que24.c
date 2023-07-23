@@ -1,50 +1,38 @@
-/*Input:  iRow = 6   iCol = 5
-Output: *   *   *   *   *   
-        *   @   @   @   *
-        *   @   @   @   *
-        *   @   @   @   *
-        *   @   @   @   *
-        *   *   *   *   *
+#include<stdio.h>
 
-        
-        */
-
-#include <stdio.h>
-
-void Pattern(int iRow, int iCol)
+int LastOccurance(char *str, char cValue)
 {
-    int i = 0; 
-    int j = 0;
-    for (i = 1; i <= iRow; i++)
+    int iCnt = 0;
+    int iPos = 0;
+
+    while(*str != '\0')
     {
-     for (j = 1; j <= iCol; j++)
-     {
-        if((i == 1) || (i == iRow) || (j == 1) || (j == iCol))
+        if(*str == cValue)
         {
-            printf("*\t",i);
-          
+            iPos = iCnt;
+           
         }
-        else 
-        {
-          printf("@\t");  
-        }
-        
-     }
-        printf("\n");
+        str++;
+        iCnt++;
     }
+    return iPos;
 }
 
 int main()
 {
-    int iValue1 = 0;
-    int iValue2 = 0;
-    printf("Enter the number of rows: \n");
-    scanf("%d", &iValue1);
+    char Arr[20];
+    char ch = '\0';
+    int iRet = 0;
 
-    printf("Enter the number of columns: \n");
-    scanf("%d", &iValue2);
+    printf("Enter string : \n");
+    scanf("%[^'\n']s",Arr);
 
-    Pattern(iValue1, iValue2);
+    printf("Enter the chracter : \n");
+    scanf(" %c",&ch);
+
+    iRet = LastOccurance(Arr,ch);
+
+    printf("Last ocuurance of that character is at : %d\n",iRet);
 
     return 0;
 }

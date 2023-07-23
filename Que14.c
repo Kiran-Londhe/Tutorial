@@ -1,45 +1,58 @@
-/*Input:  iRow = 4  iCol = 5
-Output: 4 4 4 4 4
-        3 3 3 3 3
-        2 2 2 2 2
-        1 1 1 1 1
-        */
-
 #include<stdio.h>
+#include<stdlib.h>
 
-void Pattern(int iRow, int iCol)
+void Range(int Arr[], int iLength, int iStart, int iEnd)
 {
-    int i = 0;
-    int j = 0;
-    
-  for(i = iRow; i >= 1 ; i--)
- {
-  for(j = iCol; j >= 1; j--)
-  {
-    
-   {
-    printf("%d\t",i);
-   
-   }
-   
-  }
-   printf("\n");
- }
- 
+    int iCnt = 0;
+    int found = 0;
+
+    for(iCnt = 0; iCnt < iLength; iCnt++)
+    {
+      if(Arr[iCnt] >= iStart && Arr[iCnt] <= iEnd)
+        {
+          if (!found)
+            {
+                printf("Elements within the range %d - %d are:\n", iStart, iEnd);
+                found = 1;
+            }
+            printf("%d\n", Arr[iCnt]);
+        }
+    }
+
+    if (!found)
+    {
+        printf("No elements found within the range %d - %d.\n", iStart, iEnd);
+    }
 }
 
 int main()
 {
-    int iValue1 = 0;
-    int iValue2 = 0;
-    printf("Enter the number of rows: \n");
-    scanf("%d",&iValue1);
+    int iSize = 0;
+    int *ptr = NULL;
+    int iCnt = 0, iStart = 0, iEnd = 0;
 
-    printf("Enter the number of column: \n");
-    scanf("%d",&iValue2);
+    printf("Enter the number of elements: ");
+    scanf("%d", &iSize);
 
+    ptr = (int *)malloc(iSize * sizeof(int));
+    if(ptr == NULL)
+    {
+        printf("Unable to allocate memory");
+        return -1;
+    }
 
-    Pattern(iValue1,iValue2);
+    printf("Enter the elements: \n");
+    for(iCnt = 0; iCnt < iSize; iCnt++)
+    {
+        scanf("%d", &ptr[iCnt]);
+    }
+
+    printf("Enter the range (start and end): ");
+    scanf("%d %d", &iStart, &iEnd);
+
+    Range(ptr, iSize, iStart, iEnd);
+
+    free(ptr);
 
     return 0;
 }

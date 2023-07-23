@@ -1,30 +1,52 @@
+/*Input:  iRow = 4   iCol = 4
+Output: 2 4 6 8 10
+        1 3 5 7 9
+        2 4 6 8 10
+        1 3 5 7 9
+        */
+
 #include<stdio.h>
 
-void Struprx(char *str)
+void Pattern(int iRow, int iCol)
 {
-    while(*str != '\0')
-    {
-        if((*str >= 'a') && (*str <= 'z'))
-        {
-          *str = *str - 32;
-        }
+    int i = 0;
+    int j = 0;
+    int iCnt = 2;
     
-       str++;
-
-    }
-
+  for(i = 1; i <= iRow; i++)
+ {
+  for(j = 1; j <= iCol; j++)
+  {
+    if((i % 2) == 0) 
+   {
+    printf("%d\t",j);
+    
+    
+   }
+   else
+   {
+    printf("%d\t",iCnt);
+    iCnt +=2;
+   }
+  }
+   printf("\n");
+   
+ }
+ 
 }
-  
 
 int main()
 {
-  char arr[20];
-  
-  printf("Enter string : \n");
-  scanf("%[^'\n]s",arr);
+    int iValue1 = 0;
+    int iValue2 = 0;
+    printf("Enter the number of rows: \n");
+    scanf("%d",&iValue1);
 
-  Struprx(arr);
-  printf("Modified string is : %s\n",arr);
-  
-  return 0;
+    printf("Enter the number of column: \n");
+    scanf("%d",&iValue2);
+
+
+    Pattern(iValue1,iValue2);
+
+    return 0;
 }

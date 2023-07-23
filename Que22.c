@@ -1,36 +1,47 @@
+/*Input:  iRow = 4   iCol = 4
+Output: *   *   *   *
+        *   *   *   #
+        *   *   #   #
+        *   #   #   #
+        
+        */
+
 #include <stdio.h>
 
-int CountChar(char *str, char ch)
+void Pattern(int iRow, int iCol)
 {
-    int iCount = 0;
-
-    while (*str != '\0')
+    int i = 0; 
+    int j = 0;
+    for (i = iRow; i >= 1; i--)
     {
-     if ((*str >= 'a') && (*str <= 'z') || (*str >= 'A') && (*str <= 'Z'))
-    {
-      if(*str == ch)
-      iCount++;
+     for (j = 1; j <= iCol; j++)
+     {
+        if(i >= j)
+        {
+            printf("*\t",i);
+          
+        }
+        else 
+        {
+          printf("#\t");  
+        }
+        
+     }
+        printf("\n");
     }
-     str++;
-    }  
-    return iCount;
 }
 
 int main()
 {
-    char arr[20];
-    int iRet = 0;
-    char cValue = 0;
+    int iValue1 = 0;
+    int iValue2 = 0;
+    printf("Enter the number of rows: \n");
+    scanf("%d", &iValue1);
 
-    printf("Enter string: \n");
-    scanf(" %[^\n]s", arr);
+    printf("Enter the number of columns: \n");
+    scanf("%d", &iValue2);
 
-    printf("Enter the character: \n");
-    scanf(" %c",&cValue);
-    
-    iRet = CountChar(arr,cValue);
-    printf("Character frequency is %d\n",iRet);
-    
+    Pattern(iValue1, iValue2);
 
     return 0;
 }

@@ -1,34 +1,53 @@
+/*Input:  iRow = 5   iCol = 5
+Output: a b c d e
+        1 2 3 4 5
+        a b c d e
+        1 2 3 4 5
+
+        */
+
 #include<stdio.h>
 
-void Strtogglex(char *str)
+void Pattern(int iRow, int iCol)
 {
-    while(*str != '\0')
-    {
-        if((*str >= 'a') && (*str <= 'z'))
-        {
-          *str = *str - 32;
-        }
-        else if((*str >= 'A') && (*str <= 'Z'))
-        {
-          *str = *str + 32;
-        }
+    int i = 0;
+    int j = 0;
+    char ch = 'a';
     
-       str++;
-
-    }
-
+  for(i = 1; i <= iRow; i++)
+ {
+  for(j = 1; j <= iCol; j++)
+  {
+    if((i % 2) == 0) 
+   {
+    printf("%c\t",ch);
+    ch++;
+    
+   }
+   else
+   {
+    printf("%d\t",j);
+   
+   }
+  }
+   printf("\n");
+   
+ }
+ 
 }
-  
 
 int main()
 {
-  char arr[20];
-  
-  printf("Enter string : \n");
-  scanf("%[^'\n]s",arr);
+    int iValue1 = 0;
+    int iValue2 = 0;
+    printf("Enter the number of rows: \n");
+    scanf("%d",&iValue1);
 
-  Strtogglex(arr);
-  printf("Modified string is : %s\n",arr);
-  
-  return 0;
+    printf("Enter the number of column: \n");
+    scanf("%d",&iValue2);
+
+
+    Pattern(iValue1,iValue2);
+
+    return 0;
 }

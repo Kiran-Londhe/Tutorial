@@ -1,46 +1,46 @@
+/*Input:  iRow = 4   iCol = 4
+Output: * # # #
+        * * # #
+        * * * #
+        * * * *
+        */
+
 #include <stdio.h>
 
-#define TRUE 1
-#define FALSE 0
-
-typedef int BOOL;
-
-BOOL ChkChar(char *str, char ch)
+void Pattern(int iRow, int iCol)
 {
-    while (*str != '\0')
+    int i = 0; 
+    int j = 0;
+    for (i = 1; i <= iRow; i++)
     {
-     if ((*str >= 'a') && (*str <= 'z') || (*str >= 'A') && (*str <= 'Z'))
-    {
-      if (*str == ch)
-      return TRUE;
+     for (j = 1; j <= iCol; j++)
+     {
+        if(i >= j)
+        {
+            printf("*\t",i);
+          
+        }
+        else 
+        {
+          printf("#\t");  
+        }
+        
+     }
+        printf("\n");
     }
-     str++;
-     
-    }  
-    return FALSE;
 }
 
 int main()
 {
-    char arr[20];
-    BOOL bRet = FALSE;
-    char cValue = 0;
+    int iValue1 = 0;
+    int iValue2 = 0;
+    printf("Enter the number of rows: \n");
+    scanf("%d", &iValue1);
 
-    printf("Enter string: \n");
-    scanf(" %[^\n]s", arr);
+    printf("Enter the number of columns: \n");
+    scanf("%d", &iValue2);
 
-    printf("Enter the character: \n");
-    scanf(" %c",&cValue);
-    
-    bRet = ChkChar(arr,cValue);
-    if (bRet == TRUE)
-    {
-        printf("Character found\n");
-    }
-    else
-    {
-        printf("Character not found\n");
-    }
+    Pattern(iValue1, iValue2);
 
     return 0;
 }

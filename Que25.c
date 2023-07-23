@@ -1,41 +1,49 @@
-#include<stdio.h>
+/*Input:  iRow = 6   iCol = 5
+Output: 1   2   3   4     
+        1   *   *   4   
+        1   *   *   4   
+        1   2   3   4   
+        
 
-void strrevX(char *str)
+        
+        */
+
+#include <stdio.h>
+
+void Pattern(int iRow, int iCol)
 {
-    char *start = NULL;
-    char *end = NULL;
-    char temp = '\0';
-
-    start = str;
-    end = str;
-
-    while(*end != '\0')
+    int i = 0; 
+    int j = 0;
+    for (i = 1; i <= iRow; i++)
     {
-        end++;
-    }
-    end--;
-
-    while(start < end)
-    {
-       temp = *start;
-       *start = *end;
-       *end = temp;
-
-       start++;
-       end--; 
+     for (j = 1; j <= iCol; j++)
+     {
+        if((i == 1) || (i == iRow) || (j == 1) || (j == iCol))
+        {
+            printf("%d\t",j);
+          
+        }
+        else 
+        {
+          printf("*\t");  
+        }
+        
+     }
+        printf("\n");
     }
 }
 
 int main()
 {
-    char Arr[20];
+    int iValue1 = 0;
+    int iValue2 = 0;
+    printf("Enter the number of rows: \n");
+    scanf("%d", &iValue1);
 
-    printf("Enter string : \n");
-    scanf("%[^'\n']s",Arr);
+    printf("Enter the number of columns: \n");
+    scanf("%d", &iValue2);
 
-    strrevX(Arr);
-
-    printf("Reverse string is : %s\n",Arr);
+    Pattern(iValue1, iValue2);
 
     return 0;
 }

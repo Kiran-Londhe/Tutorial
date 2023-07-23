@@ -1,47 +1,29 @@
-#define TRUE 1
-#define FALSE 0
+/*Input:8
+Output: 2 4 6 8 10 12 14 16
+*/
+
 #include<stdio.h>
-#include<ctype.h>
 
-
-typedef int BOOL;
-
-void DisplaySchedule(char chDiv)
-{ 
-  chDiv = toupper(chDiv);
- 
-if(chDiv == 'A')
+void Pattern(int iNo)
 {
-  printf("Your Exam at 7 AM");
-}
+    int iCnt = 0;
+   
+    for(iCnt = 2; iCnt<=iNo*2; iCnt+=2)
+    
+   {
+      printf("%d\t",iCnt);
+   }
 
-else if(chDiv == 'B')
-{
-  printf("Your Exam at 8:30 AM");
+ printf("\n");
 }
-
-else if(chDiv =='C')
-{
-  printf("Your Exam at 9:20 AM");
-}
-
-else
-{
-  printf("Your Exam at 10:30 AM");
-}
-
-}
-
 
 int main()
 {
-  char cValue = '\0';
-  BOOL Ret = FALSE;
+    int iValue = 0;
+    printf("Enter the number of elements: \n");
+    scanf("%d",&iValue);
 
-  printf("Enter your division : \n");
-  scanf("%c",&cValue);
+    Pattern(iValue);
 
-  DisplaySchedule(cValue);
-  
-  return 0;
+    return 0;
 }

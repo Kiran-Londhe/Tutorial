@@ -1,30 +1,45 @@
+/*Input:  iRow = 4   iCol = 4
+Output: 1 2 3 4
+        5 6 7 8
+        9 1 2 3
+        4 5 6 7
+        */
+
 #include<stdio.h>
 
-void Strlwrx(char *str)
+void Pattern(int iRow, int iCol)
 {
-    while(*str != '\0')
-    {
-        if((*str >= 'A') && (*str <= 'Z'))
-        {
-          *str = *str + 32;
-        }
+    int i = 0;
+    int j = 0;
+    int iCnt = 0;
+  for(i = 1; i <= iRow; i++)
+ {
+  for(j = 1; j <= iCol; j++)
+  {
     
-       str++;
-
-    }
-
+   {
+    printf("%d\t", (iCnt++ % 9) + 1); 
+   }
+   
+  }
+   printf("\n");
+   
+ }
+ 
 }
-  
 
 int main()
 {
-  char arr[20];
-  
-  printf("Enter string : \n");
-  scanf("%[^'\n]s",arr);
+    int iValue1 = 0;
+    int iValue2 = 0;
+    printf("Enter the number of rows: \n");
+    scanf("%d",&iValue1);
 
-  Strlwrx(arr);
-  printf("Modified string is : %s\n",arr);
-  
-  return 0;
+    printf("Enter the number of column: \n");
+    scanf("%d",&iValue2);
+
+
+    Pattern(iValue1,iValue2);
+
+    return 0;
 }

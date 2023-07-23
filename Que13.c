@@ -1,36 +1,46 @@
-#include <stdio.h>
+/*Input:  iRow = 3  iCol = 5
+Output: A A A A A 
+        B B B B B 
+        C C C C C
+        */
 
-int Difference(char *str)
+#include<stdio.h>
+
+void Pattern(int iRow, int iCol)
 {
-    int countSmall = 0;
-    int countCapital = 0;
-
-    while (*str != '\0')
-    {
-        if (*str >= 'a' && *str <= 'z')
-        {
-            countSmall++;
-        }
-        else if (*str >= 'A' && *str <= 'Z')
-        {
-            countCapital++;
-        }
-        str++;
-    }
-
-    return countSmall - countCapital;
+    int i = 0;
+    int j = 0;
+    char ch ='A';
+    
+  for(i = 1, ch ='A';  i <=iRow; i++,ch++)
+ {
+  for(j = 1; j <= iCol; j++)
+  {
+    
+   {
+    printf("%c\t",ch);
+   
+    
+   }
+   
+  }
+   printf("\n");
+ }
+ 
 }
 
 int main()
 {
-    char arr[20];
-    int difference = 0;
+    int iValue1 = 0;
+    int iValue2 = 0;
+    printf("Enter the number of rows: \n");
+    scanf("%d",&iValue1);
 
-    printf("Enter the string: \n");
-    scanf(" %[^\n]", arr);
+    printf("Enter the number of column: \n");
+    scanf("%d",&iValue2);
 
-    difference = Difference(arr);
-    printf("Difference between small and capital letters: %d\n", difference);
+
+    Pattern(iValue1,iValue2);
 
     return 0;
 }

@@ -1,39 +1,29 @@
-#define TRUE 1
-#define FALSE 0
-#include<stdio.h>
+/*Input:5
+Output: #1 * # 2 * # 3 * # 4
+*/
 
-typedef int BOOL;
+#include <stdio.h>
 
-BOOL ChkSmall(char ch)
-{ 
-
- if((ch >= 'a') && (ch <= 'z'))
+void Pattern(int iNo)
 {
-  return TRUE;
-}
-else
-{
-  return FALSE;
-}
+    int iCnt = 0;
+   
+    for(iCnt = 1; iCnt <=iNo ; iCnt++)
+   
+   {
+      printf("*\t#\t%d\t",iCnt);
+   }
+
+ printf("\n");
 }
 
 int main()
 {
-  char cValue = '\0';
-  BOOL bRet = FALSE;
+    int iValue = 0;
+    printf("Enter the number of elements: \n");
+    scanf("%d",&iValue);
 
-  printf("Enter the Character : \n");
-  scanf("%c",&cValue);
+    Pattern(iValue);
 
-  bRet = ChkSmall(cValue);
-  if(bRet == TRUE)
-  {
-    printf("It is small chracter : \n");
-  }
-  else
-  {
-    printf("It is not small character : \n");
-  }
-
-  return 0;
+    return 0;
 }

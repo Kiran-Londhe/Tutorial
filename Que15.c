@@ -1,45 +1,45 @@
+/*Input:  iRow = 3  iCol = 4
+Output: 1 2 3 4
+        5 6 7 8
+        9 10 11 12
+        */
+
 #include<stdio.h>
 
-void Reverse(char *str)
+void Pattern(int iRow, int iCol)
 {
-  char *start = NULL;
-    char *end = NULL;
-    char temp = '\0';
-
-    start = str;
-    end = str;
-
-    while(*end != '\0')
-    {
-        end++;
-    }
-    end--;
-
-    while(start < end)
-    {
-       temp = *start;
-       *start = *end;
-       *end = temp;
-
-       start++;
-       end--; 
-    }
-
-
+    int i = 0;
+    int j = 0;
+    int iCnt = 1;
+  for(i = 1; i <= iRow; i++)
+ {
+  for(j = 1; j <= iCol; j++)
+  {
+    
+   {
+    printf("%d\t",iCnt++);
+    
+   
+   }
+   
+  }
+   printf("\n");
+ }
+ 
 }
-  
 
 int main()
 {
-  char arr[20];
-  int iRet = 0;
-  
+    int iValue1 = 0;
+    int iValue2 = 0;
+    printf("Enter the number of rows: \n");
+    scanf("%d",&iValue1);
 
-  printf("Enter string : \n");
-  scanf(" %[^'\n]s",arr);
+    printf("Enter the number of column: \n");
+    scanf("%d",&iValue2);
 
-  Reverse(arr);
-  printf("Reverse string is : %s\n",arr);
-  
-  return 0;
+
+    Pattern(iValue1,iValue2);
+
+    return 0;
 }

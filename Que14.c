@@ -1,42 +1,45 @@
-#include <stdio.h>
+/*Input:  iRow = 4  iCol = 5
+Output: 4 4 4 4 4
+        3 3 3 3 3
+        2 2 2 2 2
+        1 1 1 1 1
+        */
 
-#define TRUE 1
-#define FALSE 0
+#include<stdio.h>
 
-typedef int BOOL;
-
-BOOL ChkVowels(char *str)
+void Pattern(int iRow, int iCol)
 {
-    while (*str != '\0')
-    {
-        if (*str == 'a' || *str == 'e' || *str == 'i' || *str == 'o' || *str == 'u' ||
-            *str == 'A' || *str == 'E' || *str == 'I' || *str == 'O' || *str == 'U')
-        {
-            return TRUE;
-        }
-        str++;
-    }
-
-    return FALSE;
+    int i = 0;
+    int j = 0;
+    
+  for(i = iRow; i >= 1 ; i--)
+ {
+  for(j = iCol; j >= 1; j--)
+  {
+    
+   {
+    printf("%d\t",i);
+   
+   }
+   
+  }
+   printf("\n");
+ }
+ 
 }
 
 int main()
 {
-    char arr[20];
-    BOOL bRet = FALSE;
+    int iValue1 = 0;
+    int iValue2 = 0;
+    printf("Enter the number of rows: \n");
+    scanf("%d",&iValue1);
 
-    printf("Enter string: \n");
-    scanf(" %[^\n]s", arr);
-    
-    bRet = ChkVowels(arr);
-    if (bRet == TRUE)
-    {
-        printf("Contains Vowels\n");
-    }
-    else
-    {
-        printf("There are no Vowels\n");
-    }
+    printf("Enter the number of column: \n");
+    scanf("%d",&iValue2);
+
+
+    Pattern(iValue1,iValue2);
 
     return 0;
 }

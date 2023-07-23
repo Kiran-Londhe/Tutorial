@@ -1,41 +1,47 @@
-#define TRUE 0
-#define FALSE 1
+/*Input:  iRow = 3  iCol = 4
+Output: * # * # 
+        * # * # 
+        * # * # 
+        
+        
+        
+*/
+
 #include<stdio.h>
 
-
-typedef int BOOL;
-
-BOOL ChkSpecial(char ch)
+void Pattern(int iRow, int iCol)
 {
-    if((ch == '!') || (ch == '@') || (ch == '#') || (ch == '$') || (ch == '%') || (ch == '^') || (ch == '&') || (ch == '*'))
-    { 
-     return TRUE;
-    }
-    else
-    {
-    return FALSE;
-    }
+    int i = 0;
+    int j = 0;
+
+  for(i = 1; i <=iRow; i++)
+ {
+  for(j = 1 ; j <= iCol; j++)
+  if((j % 2) == 0)
+   {
+    printf("#\t");
+   }
+   else
+   {
+    printf("*\t");
+   }
+  printf("\n");
+ }
+ 
 }
-    
 
 int main()
 {
-  char cValue = '\0'; 
-  BOOL bRet = FALSE;
-  
+    int iValue1 = 0;
+    int iValue2 = 0;
+    printf("Enter the number of rows: \n");
+    scanf("%d",&iValue1);
 
-  printf("Enter the character : \n");
-  scanf("%c",&cValue);
+    printf("Enter the number of column: \n");
+    scanf("%d",&iValue2);
 
-  bRet = ChkSpecial(cValue);
-  if(bRet == TRUE)
-  {
-    printf("It is special Character");
-  }
-  else
-  {
-    printf("It is not special Character");
-  }
-  
-  return 0;
+
+    Pattern(iValue1,iValue2);
+
+    return 0;
 }

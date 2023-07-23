@@ -1,31 +1,45 @@
-#include <stdio.h>
+/*Input:  iRow = 4  iCol = 4
+Output: A B C D
+        A B C D
+        A B C D
+        A B C D 
+*/
 
-int CountCapital(char *str)
+#include<stdio.h>
+
+void Pattern(int iRow, int iCol)
 {
-    int count = 0;
+    int i = 0;
+    int j = 0;
+    char ch ='A';
 
-    while (*str != '\0')
-    {
-        if (*str >= 'A' && *str <= 'Z')
-        {
-            count++;
-        }
-        str++;
-    }
-
-    return count;
+  for(i = 1;  i <=iRow; i++)
+ {
+  for(j = 1, ch = 'A'; j <= iCol; j++,ch++)
+  {
+ 
+   {
+    printf("%c\t",ch);
+    
+   }
+  }
+   printf("\n");
+ }
+ 
 }
 
 int main()
 {
-    char arr[20];
-    int iRet = 0;
+    int iValue1 = 0;
+    int iValue2 = 0;
+    printf("Enter the number of rows: \n");
+    scanf("%d",&iValue1);
 
-    printf("Enter the string: \n");
-    scanf(" %[^\n]", arr);
+    printf("Enter the number of column: \n");
+    scanf("%d",&iValue2);
 
-    iRet = CountCapital(arr);
-    printf("Number of capital letters: %d\n", iRet);
+
+    Pattern(iValue1,iValue2);
 
     return 0;
 }

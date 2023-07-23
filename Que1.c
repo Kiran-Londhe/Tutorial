@@ -1,38 +1,31 @@
-#define TRUE 1
-#define FALSE 0
-#include<stdio.h>
+/*Input:5
+Output: A B C D E
 
-typedef int BOOL;
+*/
 
-BOOL ChkAlpha(char ch)
+#include <stdio.h>
+
+void Pattern(int iNo)
 {
- if((ch >= 'a') || (ch <= 'z') && (ch >= 'A') || (ch >= 'Z'))
-{
-  return TRUE;
-}
-else
-{
-  return FALSE;
-}
+    int iCnt = 0;
+    char ch = 'A';
+    
+    for(iCnt = 1; iCnt<= iNo ; iCnt++)
+ {
+   printf("%c\t",ch);
+   ch++; 
+ }
+
+ printf("\n");
 }
 
 int main()
 {
-  char cValue = '\0';
-  BOOL bRet = FALSE;
+    int iValue = 0;
+    printf("Enter the number of elements: \n");
+    scanf("%d",&iValue);
 
-  printf("Enter the Character : \n");
-  scanf("%c",&cValue);
+    Pattern(iValue);
 
-  bRet = ChkAlpha(cValue);
-  if(bRet == TRUE)
-  {
-    printf("It is Character : \n");
-  }
-  else
-  {
-    printf("It is not Character : \n");
-  }
-
-  return 0;
+    return 0;
 }

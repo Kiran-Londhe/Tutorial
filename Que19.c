@@ -1,35 +1,48 @@
+/*Input:  iRow = 5   iCol = 5
+Output: 1  2  3  4  5
+       -1 -2 -3 -4 -5
+        1  2  3  4  5
+       -1 -2 -3 -4 -5
+        1  2  3  4  5
+        */
+
 #include <stdio.h>
 
-int IsDigit(char ch)
+void Pattern(int iRow, int iCol)
 {
-    if (ch >= '0' && ch <= '9')
-        return 1;
-    else
-        return 0;
-}
+    int i, j;
 
-void DisplayDigit(char *str)
-{
-    printf("Digits are: ");
-    while (*str != '\0')
+    for (i = 1; i <= iRow; i++)
     {
-        if (IsDigit(*str))
+        if (i % 2 == 1) 
         {
-            printf("%c ", *str);
+            for (j = 1; j <= iCol; j++)
+            {
+                printf("%d\t", j);
+            }
         }
-        str++;
+        else 
+        {
+            for (j = 1; j <= iCol; j++)
+            {
+                printf("%d\t", -j);
+            }
+        }
+        printf("\n");
     }
-    printf("\n");
 }
 
 int main()
 {
-    char arr[20];
+    int iValue1 = 0;
+    int iValue2 = 0;
+    printf("Enter the number of rows: \n");
+    scanf("%d", &iValue1);
 
-    printf("Enter string: \n");
-    scanf("%[^\n]s", arr);
+    printf("Enter the number of columns: \n");
+    scanf("%d", &iValue2);
 
-    DisplayDigit(arr);
+    Pattern(iValue1, iValue2);
 
     return 0;
 }

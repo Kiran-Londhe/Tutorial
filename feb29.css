@@ -1,0 +1,18 @@
+body
+{
+    background:lightgrey;
+}
+
+div
+{
+    margin-left: 45%;
+}
+
+.circle 
+{
+    
+    width: 100px; /* Size of the circle */
+    height: 100px; /* Size of the circle */
+    background-color: darkgoldenrod; /* Circle color */
+    border-radius: 50%; /* This makes it round */
+  }

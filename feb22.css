@@ -1,0 +1,79 @@
+body
+{
+    background: lightgoldenrodyellow;
+}
+
+h2
+{
+    background: yellowgreen;
+
+    color: white;
+
+    font-size: 40px;
+
+    font-family: Arial, Helvetica, Verdana, Geneva, Tahoma, sans-serif
+
+    font-weight: 10;
+
+    text-align: center;
+}
+
+div
+{
+    background: darkcyan;
+
+    height: 200px;
+
+    width: 100%;
+}
+
+span
+{
+    background: darkolivegreen;
+
+    height: 400px;
+}
+
+/* h3
+{
+    color: darkblue;
+
+    text-align: center;
+} */
+
+#a
+{
+    color: darkblue;
+
+    text-align: center;
+}
+
+.c
+{
+    background: yellow;
+    color-scheme: red;
+    text-align: right;
+
+}
+
+/* .h
+{
+    color: blue;
+}
+
+#h
+
+{
+    color: red;
+} */
+
+#h
+{
+    color: blue;
+}
+
+.h
+
+{
+    color: red;
+}

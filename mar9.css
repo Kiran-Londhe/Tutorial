@@ -1,0 +1,28 @@
+body
+{
+    background: Yellow;
+    color: darkblue;
+    text-align: center;
+}
+
+.night
+{
+    background: black;
+    color: whitesmoke;
+}
+
+button
+{
+    width: 120px;
+    border-radius: 20px;
+    background: darkgoldenrod;
+    color: lightgrey;
+    transition: 2s;
+}
+
+button:hover
+{
+    cursor: pointer;
+    background: pink;
+    color: white;
+}

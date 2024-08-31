@@ -1,0 +1,53 @@
+body
+{
+    background: lightseagreen;
+    text-align: center;
+}
+
+h1
+{
+    background: darkcyan;
+    color: azure;
+}
+
+button
+
+{
+    background: black;
+    color: yellow;
+    border-radius: 10px;
+    transition: 1s;
+    margin-top: 20px;
+}
+
+button:hover
+{
+    background: white;
+    color: darkblue;
+    cursor: pointer;
+}
+
+div
+{
+    background: blue;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin-left: 43.6%;
+}
+
+#m
+{
+    background: black;
+    color: yellow;
+    border-radius: 10px;
+    transition: 1s;
+    margin-top: 210px;
+}
+
+#m:hover
+{
+    background: white;
+    color: darkblue;
+    cursor: pointer;
+}

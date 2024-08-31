@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Homework</title>
+ 
+    <style>
+        body
+        {
+            background: black
+        }
+
+        h1
+        { 
+            background:pink;
+            color: green;         
+        }
+
+        h2
+        { 
+            background:darkgoldenrod;
+            color: azure;     
+        }
+
+        h3
+        {
+            background: lightblue;
+        }
+
+        h4
+        {
+            background: yellowgreen;
+        }
+
+        h5
+        {
+            background: blueviolet;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+ <h1 id="k"><marquee scrollamount="10" behavior="alternate" direction="right">Hello and Welcome!!! </marquee></h1>
+
+ <center>
+ <button onclick="xy()">Click me</button>
+</center>
+
+ <h2 id="i">Home Page</h2>
+
+ <center>
+    <button onclick="ab()">Click me</button>
+</center>
+
+ <h3 id="r">Statement h3</h3>
+
+ <center>
+    <button onclick="cd()">Click me</button>
+</center>
+
+<h4 id="a">Statement h4</h4>
+
+<center>
+   <button onclick="ef()">Click me</button>
+</center>
+
+<h5 id="n">Statement h5</h5>
+
+<center>
+    <button onclick="gh()">Click me</button>
+ </center>
+ 
+
+ <script>
+
+    console.log("Hii")
+    k = document.getElementById("k")
+    var marquee = k.querySelector("marquee");
+
+    function xy()
+    {    
+    marquee.textContent = "Welcome to Our IT Solutions Website !!!"
+    k.style.color = "white"
+    k.style.textAlign = 'center'
+    k.style.background = 'black'
+    document.body.style.backgroundColor = 'white';
+    k.style.borderRadius = '10px';
+    k.style.marginLeft = '180px';
+    k.style.marginRight = '180px';
+    k.style.border = '8px groove skyblue' 
+    }  
+
+    console.log("Good Morning....")
+    i = document.getElementById("i")
+
+    function ab()
+    {
+        i.textContent = "Inside Home Page....!!"
+        i.style.textAlign ='center'
+        i.style.border = '8px double skyblue'
+        i.style.borderRadius = '10px';
+        
+    }
+
+    console.log("h3 Statement..")
+    r = document.getElementById("r")
+
+    function cd()
+    {
+     r.textContent = "Inside Statement h3...."
+     r.style.textAlign ='right'
+     r.style.fontSize = "30px"
+     r.style.width = "50%"
+     r.style.border = '8px ridge gold' 
+    }
+   
+    console.log("h4 Statement..")
+    a = document.getElementById("a")
+
+    function ef()
+    {
+        a.textContent = "Inside Statement h4...."
+        a.style.border = '8px inset black' 
+        a.style.paddingTop = '10px'
+        a.style.paddingBottom = '10px'
+    }
+
+    console.log("h5 Statement..")
+    
+
+    function gh()
+    {
+        n.textContent = "Inside Statement h5...."
+        n.style.paddingTop = '10px'
+        n.style.paddingBottom = '10px'
+        n.style.textAlign ='center'
+       
+    }
+
+    
+    console.log(n)
+
+    console.log(a)
+  
+    console.log(r)
+
+    console.log(i)
+
+    console.log(k)
+    
+ </script>
+    
+</body>
+</html>
